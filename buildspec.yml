@@ -3,14 +3,16 @@ phases:
   install:
     commands:
       - echo Installing dependencies...
-      - choco install -y dotnet-sdk # Chocolatey package manager for Windows
+      - python --version  # Confirm Python is installed
+      - pip install -r requirements.txt  # Install dependencies
   build:
     commands:
       - echo Building the application...
-      - dotnet build
+      - python setup.py build  # Example: Adjust for your Python application
   post_build:
     commands:
       - echo Build completed successfully
 artifacts:
   files:
     - '**/*'
+
