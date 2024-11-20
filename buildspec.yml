@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - choco install -y dotnet-sdk # Chocolatey package manager for Windows
+  build:
+    commands:
+      - echo Building the application...
+      - dotnet build
+  post_build:
+    commands:
+      - echo Build completed successfully
+artifacts:
+  files:
+    - '**/*'
